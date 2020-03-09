@@ -322,6 +322,35 @@ export const asyncRouterMap = [
             ]
           }
         ]
+      },
+
+      // demo
+      {
+        path: '/demo',
+        name: 'demoPage',
+        component: PageView,
+        meta: { title: '组件demo', icon: 'tool' },
+        redirect: '/demo/layout',
+        children: [
+          {
+            path: '/demo/layout',
+            name: '页面级元素',
+            component: () => import('@/views/demo/Layout'),
+            meta: { title: '页面级元素', keepAlive: true }
+          },
+          {
+            path: '/demo/main element',
+            name: '主元素',
+            component: () => import('@/views/demo/MainElement'),
+            meta: { title: '主元素', keepAlive: true }
+          },
+          {
+            path: '/demo/form element',
+            name: '表单元素',
+            component: () => import('@/views/demo/FormElement'),
+            meta: { title: '表单元素', keepAlive: true }
+          }
+        ]
       }
     ]
   },
